@@ -27,7 +27,6 @@ Recommendation:
   - trait: string
   - run_type: string
   - run_distance: float
-  - new_test: string
 
 
 # Example table for a typical Book model.
