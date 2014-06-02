@@ -1,0 +1,10 @@
+<h1>Breeds</h1>
+
+<% Breed.read.order("breed asc").each do |breed| %>
+
+<p>Breed: <%= breed["breed"] %></p>
+<p>Body Type: <%= breed["build"] %></p>
+<p>Recommended Run: <%= breed["run_type"] %></p>
+<p>Recommended Distance: <%= breed["run_distance"] %></p>
+
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Profile</h1>
+
+<p>Name: <%= @user["first_name"] %> <%= @user["last_name"] %></p>
+<p>Email: <%= @user["email"] %></p>
+<p>Password: <%= @user["password"] %></p>
+<p>Zip Code: <%= @user["zip_code"] %></p>
+<p>Sex: <%= @user["sex"] %></p>
+<p>Birth Year: <%= @user["birth_year"] %></p>
+
+
+<% user = User.find_by("id" => cookies["user_id"]) %>
+
+<p><%= link_to "Delete Profile", "/users/#{user["id"]}", "method" => "delete" %> | <%= link_to "Edit Profile", "/users/#{user["id"]}/edit" %></p>

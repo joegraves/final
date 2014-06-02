@@ -1,32 +1,38 @@
-Owner:
+User:
+  - first_name: string
+  - last_name: string
   - email: string
   - password: string
-  - name: string
   - zip_code: integer
   - sex: string
   - birth_year: integer
-  - photo_url: string
 
 Dog:
   - name: string
   - sex: string
-  - breed_id: string
   - weight: integer
   - birth_year: integer
-  - photo_url: string
-  - owner_id: integer
+  - breed: string
+
+Relationship:
+  - user_id: integer
+  - dog_id: integer
+  - relationship: string
 
 Run:
   - date: date
   - distance: float
-  - time: time
-  - owner_id: integer
+  - time: float
+  - user_id: integer
+  - dog1_id: integer
+  - dog2_id: integer
 
-Recommendation:
+Breed:
   - breed: string
-  - trait: string
+  - build: string
   - run_type: string
-  - run_distance: float
+  - run_distance: string
+  - photo_url: string
 
 
 # Example table for a typical Book model.
