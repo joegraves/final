@@ -1,6 +1,9 @@
 <h1>Breeds</h1>
 
+
 <% Breed.read.order("breed asc").each do |breed| %>
+
+<div class="col-md-6">
 
 <p><img src= "<%= breed["photo_url"] %>" width="200"></p>
 <p><b>Breed:</b> <%= breed["breed"] %></p>
@@ -9,4 +12,7 @@
 <p><b>Recommended Distance:</b> <%= breed["run_distance"] %></p>
 <br></br>
 
+</div>
+
 <% end %>
+

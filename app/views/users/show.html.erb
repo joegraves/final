@@ -4,12 +4,20 @@
 
 <p> <%= link_to "Edit Profile", "/users/#{user["id"]}/edit" %> | <%= link_to "Delete Profile", "/users/#{user["id"]}", "method" => "delete" %> </p>
 
-<p><b>Name:</b> <%= @user["first_name"] %> <%= @user["last_name"] %></p>
-<p><b>Email:</b> <%= @user["email"] %></p>
-<p><b>Password:</b> <%= @user["password"] %></p>
-<p><b>Zip Code:</b> <%= @user["zip_code"] %></p>
-<p><b>Sex:</b> <%= @user["sex"] %></p>
-<p><b>Birth Year:</b> <%= @user["birth_year"] %></p>
+    <div class="col-md-4">
+      <p><img src= "http://www.freeimages.com/assets/182956/1829557024/silhouette-of-runner-1136556-m.jpg" height="200"></p>
+      <p><b>Name:</b> <%= @user["first_name"] %> <%= @user["last_name"] %></p>
+      <p><b>Email:</b> <%= @user["email"] %></p>
+      <p><b>Password:</b> <%= @user["password"] %></p>
+      <p><b>Zip Code:</b> <%= @user["zip_code"] %></p>
+      <p><b>Sex:</b> <%= @user["sex"] %></p>
+      <p><b>Birth Year:</b> <%= @user["birth_year"] %></p>
+      <div class="row">
+      <p></p>
+      <p></p>
+      </div>
+      <p><%= link_to "Add a New Dog", "/dogs/new", "class" => 'btn btn-lg btn-primary' %></p>
+    </div>
 
   <% relationships = Relationship.where("user_id" => @user["id"]) %>
 
@@ -17,7 +25,8 @@
       <% dog = Dog.find_by("id" => relationship["dog_id"]) %>
       <% breed = Breed.find_by("id" => dog["breed_id"]) %>
 
-        <p><img src= "<%= breed["photo_url"] %>" width="200"></p>
+      <div class="col-md-4">
+        <p><img src= "<%= breed["photo_url"] %>" height="200"></p>
         <p><b>Name:</b> <%= dog["name"] %></p>
         <p><b>Sex:</b> <%= dog["sex"] %></p>
         <p><b>Weight:</b> <%= dog["weight"] %></p>
@@ -27,17 +36,27 @@
         <p><b>Recommended Run:</b> <%= breed["run_type"] %></p>
         <p><b>Recommended Distance:</b> <%= breed["run_distance"] %></p>
         <p> <%= link_to "Edit Profile", "/dogs/#{dog["id"]}/edit" %> | <%= link_to "Delete Profile", "/dogs/#{dog["id"]}", "method" => "delete" %> </p>
-
+      </div>
 
       <% end %>
 
 <div class="row">
   <div class="col-md-2 col-md-offset-0">
-    <%= link_to "Add a New Dog", "/dogs/new", "class" => 'btn btn-lg btn-primary' %>
+
   </div>
 </div>
 
 <h3>Runs</h3>
+
+  <table width="1200" border="2 px">
+        <tr>
+          <th><b> Date </b></th>
+          <th><b>Time (minutes)</b></th>
+          <th><b>Distance (miles)</b></th>
+          <th><b>Dog</b></th>
+          <th><b>Edit</b></th>
+          <th><b>Delete</b></th>
+        </tr>
 
   <% runs = Run.where("user_id" => @user["id"]) %>
 
@@ -45,15 +64,18 @@
       <% dog1 = Dog.find_by("id" => run["dog1_id"]) %>
       <% dog2 = Dog.find_by("id" => run["dog2_id"]) %>
 
-      <table>
-        <%= run["date"] %>
-        <%= run["time"] %>
-        <%= run["distance"] %>
-        <%= dog1["name"] %>
-        <%= link_to "Edit Run", "/runs/#{run["id"]}/edit" %> | <%= link_to "Delete Run", "/runs/#{run["id"]}", "method" => "delete" %> </p>
-      </table>
+        <tr>
+          <td width="200"><%= run["date"] %></td>
+          <td width="200"><%= run["time"] %></td>
+          <td width="200"><%= run["distance"] %></td>
+          <td width="200"><%= dog1["name"] %></td>
+          <td width="200"><%= link_to "Edit Run", "/runs/#{run["id"]}/edit" %></td>
+          <td width="200"><%= link_to "Delete Run", "/runs/#{run["id"]}", "method" => "delete" %></td>
+        </tr>
+      <% end %>
+</table>
 
-    <% end %>
+<p></p>
 
 <div class="row">
   <div class="col-md-2 col-md-offset-0">
