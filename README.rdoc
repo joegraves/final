@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Thanks guys for an awesome quarter.  I'd never taken a computer programming class before, so this was like drinking from a
+fire hose.  I have a whole new appreciation for programmers and feel like I have a much better understanding of the logic behind
+creating and maintaining dynamic web apps...the scalability is truly amazing.  I think my final project ended up being more
+than I originally expected, but I gave it my best shot.  My primary problems involved the edit function (autofill current
+data, update tables based on current user id and update ids from drop downs).  I'd love to figure out how to fix the bugs
+if you guys wouldn't mind providing some feedback.  The five requirements I tried to fulfill are:
 
-Things you may want to cover:
+1. Many-to-many association
+2. Three models
+3. User Sign Up, In and Out
+4. Seed data
+5. Bootstrap
+6. Live URL (http://afternoon-savannah-6159.herokuapp.com/)
 
-* Ruby version
+It's not pretty and not fully functional, but I learned a ton trying to create what I had in mind, so thanks for 
+encouraging us to challenge ourselves...it was far from easy, but was a great way to learn.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Have an awesome summer!
+Joe
