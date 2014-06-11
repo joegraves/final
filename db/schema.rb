@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601232420) do
+ActiveRecord::Schema.define(version: 20140611021709) do
 
   create_table "breeds", force: true do |t|
     t.string "breed"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140601232420) do
     t.string  "sex"
     t.integer "weight"
     t.integer "birth_year"
-    t.string  "breed"
+    t.integer "breed_id"
   end
 
   create_table "relationships", force: true do |t|

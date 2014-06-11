@@ -7,12 +7,19 @@ User:
   - sex: string
   - birth_year: integer
 
+Breed:
+  - breed: string
+  - build: string
+  - run_type: string
+  - run_distance: string
+  - photo_url: string
+
 Dog:
   - name: string
   - sex: string
   - weight: integer
   - birth_year: integer
-  - breed: string
+  - breed_id: integer
 
 Relationship:
   - user_id: integer
@@ -27,12 +34,7 @@ Run:
   - dog1_id: integer
   - dog2_id: integer
 
-Breed:
-  - breed: string
-  - build: string
-  - run_type: string
-  - run_distance: string
-  - photo_url: string
+
 
 
 # Example table for a typical Book model.

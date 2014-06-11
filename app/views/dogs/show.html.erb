@@ -1,0 +1,11 @@
+<h1>My Dog</h1>
+
+<p>Name: <%= @dog["name"] %> %></p>
+<p>Sex: <%= @dog["sex"] %></p>
+<p>Weight: <%= @dog["weight"] %></p>
+<p>Birth Year: <%= @dog["birth_year"] %></p>
+<p>Breed: <%= @breed["breed_id"] %></p>
+
+<% dog = Dog.find_by("id" => params["id"]) %>
+
+<p><%= link_to "Delete Profile", "/dogs/#{dog["id"]}", "method" => "delete" %> | <%= link_to "Edit Profile", "/dogs/#{dog["id"]}/edit" %></p>

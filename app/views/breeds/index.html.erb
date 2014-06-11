@@ -2,9 +2,11 @@
 
 <% Breed.read.order("breed asc").each do |breed| %>
 
-<p>Breed: <%= breed["breed"] %></p>
-<p>Body Type: <%= breed["build"] %></p>
-<p>Recommended Run: <%= breed["run_type"] %></p>
-<p>Recommended Distance: <%= breed["run_distance"] %></p>
+<p><img src= "<%= breed["photo_url"] %>" width="200"></p>
+<p><b>Breed:</b> <%= breed["breed"] %></p>
+<p><b>Body Type:</b> <%= breed["build"] %></p>
+<p><b>Recommended Run:</b> <%= breed["run_type"] %></p>
+<p><b>Recommended Distance:</b> <%= breed["run_distance"] %></p>
+<br></br>
 
 <% end %>

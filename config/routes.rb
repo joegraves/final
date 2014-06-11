@@ -29,7 +29,43 @@ Rails.application.routes.draw do
   delete "/users/:id" => 'users#destroy'
 
 
-  # Resource: Breeds
+# Resource: Dogs
+
+  # --- Create
+  get "/dogs/new" => 'dogs#new'
+  post "/dogs" => 'dogs#create'
+
+  # --- Read
+  #get "/dogs" => 'dogs#index'
+  #get "/dogs/:id" => 'dogs#show'
+
+  # -- Update
+  get "/dogs/:id/edit" => 'dogs#edit'
+  patch "/dogs/:id" => 'dogs#update'
+
+  # --- Delete
+  delete "/dogs/:id" => 'dogs#destroy'
+
+
+# Resource: Runs
+
+  # --- Create
+  get "/runs/new" => 'runs#new'
+  post "/runs" => 'runs#create'
+
+  # --- Read
+  get "/runs" => 'runs#index'
+  get "/runs/:id" => 'runs#show'
+
+  # -- Update
+  get "/runs/:id/edit" => 'runs#edit'
+  patch "/runs/:id" => 'runs#update'
+
+  # --- Delete
+  delete "/runs/:id" => 'runs#destroy'  # Resource: Breeds
+
+
+# Resource: Breeds
 
   # --- Read
   get "/breeds" => 'breeds#index'
